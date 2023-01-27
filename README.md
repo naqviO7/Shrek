@@ -17,6 +17,6 @@ Use following commands as `root` user.<br>
 2. bash `shrek.sh` OR `./shrek.sh` to run script.
 
 ## Requirements.
-1. Metsasploit Framework.
+1. Bash Shell.
 2. lolcat Tool.
-3. Bash Shell.
+3. Metsasploit Framework.

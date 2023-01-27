@@ -45,7 +45,7 @@ function banner_(){
 		⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
 		⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
 				   
-				   Shrek:   Payload and Reverse Shell Generation Automation Script
+				   Shrek:   Reverse Shells Generation Script
 				   Author:  naqviO7
 			           Version: 1.0  	 """  | lolcat -a -d 5
 	
